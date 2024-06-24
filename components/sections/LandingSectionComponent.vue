@@ -23,7 +23,7 @@
 import { ArrowDownIcon, DownloadIcon } from 'lucide-vue-next';
 
 const topVersions = [
-    '1.20.6',
+    '1.21',
     '1.18.2',
     '1.16.5',
     '1.12',
