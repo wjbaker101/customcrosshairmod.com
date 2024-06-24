@@ -1,5 +1,5 @@
 <template>
-    <div class="crosshair relative mx-auto my-8 size-[260px]">
+    <div class="crosshair relative mx-auto size-[260px]">
         <div class="top"></div>
         <div class="right"></div>
         <div class="bottom"></div>
