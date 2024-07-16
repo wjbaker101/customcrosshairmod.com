@@ -2,14 +2,23 @@
     <div class="relative grid h-screen place-items-center">
         <div class="text-center">
             <h1 class="mb-2 text-3xl font-bold">Custom Crosshair Mod</h1>
-            <p class="mb-8"><small>{{ topVersions.join(' , ') }} + more!</small></p>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/custom-crosshair-mod/files" target="_blank" rel="noopener noreferrer nofollow">
-                <ButtonComponent>
-                    <DownloadIcon class="mr-2 inline-block align-middle" />
-                    <span class="align-middle">OFFICIAL DOWNLOAD</span>
-                </ButtonComponent>
-            </a>
-            <CrosshairComponent class="my-8" />
+            <p class="mb-4"><small>{{ topVersions.join(' , ') }} + more!</small></p>
+            <p class="mb-2">DOWNLOAD:</p>
+            <div class="space-x-2">
+                <a href="https://www.curseforge.com/minecraft/mc-mods/custom-crosshair-mod" target="_blank">
+                    <ButtonComponent class="text-black !bg-curseforge hover:!bg-curseforge-light focus:!outline-curseforge">
+                        <CurseForgeIcon class="mr-2 inline-block align-middle" />
+                        <span class="align-middle">CurseForge</span>
+                    </ButtonComponent>
+                </a>
+                <a href="https://modrinth.com/mod/custom-crosshair-mod" target="_blank">
+                    <ButtonComponent class="!bg-modrinth hover:!bg-modrinth-dark focus:!outline-modrinth">
+                        <ModrinthIcon class="mr-2 inline-block align-middle" />
+                        <span class="align-middle">Modrinth</span>
+                    </ButtonComponent>
+                </a>
+            </div>
+            <CrosshairComponent class="my-12" />
             <SupportComponent />
         </div>
         <div class="absolute bottom-2 text-center">
@@ -21,6 +30,7 @@
 
 <script setup lang="ts">
 import { ArrowDownIcon, DownloadIcon } from 'lucide-vue-next';
+import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 
 const topVersions = [
     '1.21',
