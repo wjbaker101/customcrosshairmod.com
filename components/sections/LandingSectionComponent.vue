@@ -33,7 +33,7 @@ import { ArrowDownIcon, DownloadIcon } from 'lucide-vue-next';
 import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 
 const topVersions = [
-    '1.21',
+    '1.21.3',
     '1.18.2',
     '1.16.5',
     '1.12',
