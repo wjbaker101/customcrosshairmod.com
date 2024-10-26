@@ -10,7 +10,8 @@
         </a>
         <h2 class="my-8 text-2xl">Patrons:</h2>
         <ul class="space-y-1">
-            <li><strong>Rcpdino T</strong> - 06/2024</li>
+            <li><strong>01lyo</strong> - 09/2024</li>
+            <li><strong>TheDarkLightAura</strong> - 06/2024</li>
             <li><strong>Daniel C</strong> - 05/2024</li>
             <li><strong>Austin J</strong> - 04/2024</li>
             <li><strong>omor i</strong> - 12/2023</li>
