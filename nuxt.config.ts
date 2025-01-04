@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     modules: ["@nuxt/fonts"],
 
     devtools: {
-        enabled: true,
+        enabled: false,
     },
 
     postcss: {
