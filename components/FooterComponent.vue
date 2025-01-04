@@ -10,12 +10,12 @@
         </p>
         <p class="space-x-2">
             <span class="flex-auto">Source Code:</span>
-            <a class="flex-auto" href="https://github.com/wjbaker101/ccm-mc_latest-fabric" target="_blank">Latest Fabric</a>
-            <a class="flex-auto" href="https://github.com/wjbaker101/ccm-mc_latest-forge" target="_blank">Latest Forge</a>
-            <a class="flex-auto" href="https://github.com/wjbaker101/ccm-mc_1.8.9-forge" target="_blank">1.8.9 Forge</a>
+            <NuxtLink class="flex-auto" to="https://github.com/wjbaker101/ccm-mc_latest-fabric" target="_blank">Latest Fabric</NuxtLink>
+            <NuxtLink class="flex-auto" to="https://github.com/wjbaker101/ccm-mc_latest-forge" target="_blank">Latest Forge</NuxtLink>
+            <NuxtLink class="flex-auto" to="https://github.com/wjbaker101/ccm-mc_1.8.9-forge" target="_blank">1.8.9 Forge</NuxtLink>
         </p>
         <p>
-            Icons by <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer nofollow">Lucide Icons</a>, fonts by <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer nofollow">Google Fonts</a>.
+            Icons by <NuxtLink to="https://lucide.dev/" target="_blank">Lucide</NuxtLink> and <NuxtLink to="https://simpleicons.org" target="_blank">Simple Icons</NuxtLink>, fonts by <NuxtLink to="https://fonts.google.com/" target="_blank">Google Fonts</NuxtLink>.
         </p>
     </footer>
 </template>
