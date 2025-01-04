@@ -29,11 +29,11 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowDownIcon, DownloadIcon } from 'lucide-vue-next';
+import { ArrowDownIcon } from 'lucide-vue-next';
 import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 
 const topVersions = [
-    '1.21.3',
+    '1.21.4',
     '1.18.2',
     '1.16.5',
     '1.12',
