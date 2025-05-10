@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+:root {
+
+    --primary: rgb(84, 107, 150);
+    --primary-dark: rgb(64, 83, 119);
+
+    --background: rgb(34, 34, 48);
+
+    --modrinth: rgb(0, 175, 92);
+    --modrinth-dark: rgb(0, 149, 78);
+
+    --curseforge: rgb(241, 100, 54);
+    --curseforge-light: rgb(255, 120, 77);
+
+}

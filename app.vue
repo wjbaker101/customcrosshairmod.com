@@ -7,8 +7,8 @@
 <script setup lang="ts">
 </script>
 
-<style lang="scss">
-@use '@/styling/main' as *;
+<style lang="css">
+@reference '~/styling/main.css';
 
 html,
 body,
@@ -23,12 +23,12 @@ body,
 }
 
 body {
-    @apply bg-background text-slate-200;
+    @apply bg-(--background) text-slate-200;
     font-family: K2D, sans-serif;
 }
 
 ol {
-    @apply border-r-2 border-primary rounded-r-md space-y-2;
+    @apply border-r-2 border-(--primary) rounded-r-md space-y-2;
     counter-reset: counter;
 
     & > li::before {
