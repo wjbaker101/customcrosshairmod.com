@@ -1,0 +1,29 @@
+export const projects: Record<string, string> = {
+    'custom_crosshair_mod': 'Custom Crosshair Mod',
+    'helpful_crosshair': 'Helpful Crosshair',
+};
+
+const retrievers: Record<string, string> = {
+    'curseforge': 'CurseForge',
+    'modrinth': 'Modrinth',
+    'pastebin': 'Pastebin',
+};
+
+export class Mapper {
+    
+    public static project(projectIdentifier: string): string {
+        if (projectIdentifier in projects) {
+            return projects[projectIdentifier]!;
+        }
+
+        return projectIdentifier;
+    }
+
+    public static retriever(retrieverIdentifier: string): string {
+        if (retrieverIdentifier in retrievers) {
+            return retrievers[retrieverIdentifier]!;
+        }
+
+        return retrieverIdentifier;
+    }
+}

@@ -5,7 +5,10 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2025-08-01',
 
-    modules: ['@nuxt/fonts'],
+    modules: [
+        '@nuxt/fonts',
+        'nuxt-charts',
+    ],
 
     devtools: {
         enabled: false,
