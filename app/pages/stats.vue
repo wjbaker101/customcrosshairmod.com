@@ -23,18 +23,26 @@
             </div>
         </div>
     </div>
-    <ProjectLineGraph
-        v-for="x in data.filter(x => x.projectIdentifier === selectedProject)"
-        :key="`${x.projectIdentifier}+${x.retrieverIdentifier}+${x.dataType}`"
-        :data="x"
-        :period="selectedPeriod"
-    />
+    <ClientOnly>
+        <ProjectLineGraph
+            v-for="x in data.filter(x => x.projectIdentifier === selectedProject)"
+            :key="`${x.projectIdentifier}+${x.retrieverIdentifier}+${x.dataType}`"
+            :data="x"
+            :period="selectedPeriod"
+        />
+    </ClientOnly>
 </template>
 
 <script setup lang="ts">
 import ProjectLineGraph from '~/components/pages/stats/ProjectLineGraph.vue';
 
-const data = await getData();
+const data = ref<Array<IProjectData>>([]);
+
+onMounted(async () => {
+    if (import.meta.client) {
+        data.value = await getData();
+    }
+});
 
 const selectedProject = ref<ProjectIdentifier>('custom_crosshair_mod');
 const selectedPeriod = ref<PeriodIdentifier>('recent');
