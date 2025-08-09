@@ -35,13 +35,13 @@ import ProjectLineGraph from '~/components/pages/stats/ProjectLineGraph.vue';
 const data = await getData();
 
 const selectedProject = ref('custom_crosshair_mod');
-const selectedPeriod = ref('recent');
+const selectedPeriod = ref<PeriodIdentifier>('recent');
 
-function selectProject(projectIdentifier: string) {
+function selectProject(projectIdentifier: ProjectIdentifier) {
     selectedProject.value = projectIdentifier;
 }
 
-function selectPeriod(period: string) {
+function selectPeriod(period: PeriodIdentifier) {
     selectedPeriod.value = period;
 }
 </script>

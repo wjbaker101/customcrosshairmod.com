@@ -16,7 +16,7 @@ import dayjs from 'dayjs';
 
 const { data, period } = defineProps<{
     data: IProjectData;
-    period: string;
+    period: PeriodIdentifier;
 }>();
 
 const dataToDisplay = computed(() => {
