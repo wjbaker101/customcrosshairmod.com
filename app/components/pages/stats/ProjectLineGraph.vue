@@ -75,9 +75,14 @@ const latestDiffFormatted = computed(() => {
 
 <style lang="css">
 :root {
+    --vis-tooltip-padding: 0;
+
     --vis-tooltip-background-color: transpanret;
     --vis-tooltip-text-color: inherit;
     --vis-tooltip-border-color: transparent;
-    --vis-tooltip-padding: 0;
+
+    --vis-dark-tooltip-background-color: transpanret;
+    --vis-dark-tooltip-text-color: inherit;
+    --vis-dark-tooltip-border-color: transparent;
 }
 </style>
