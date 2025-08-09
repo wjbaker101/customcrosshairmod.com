@@ -1,14 +1,17 @@
 <template>
-    <LineChart
-        :data="dataToDisplay"
-        :categories="categories"
-        :height="300"
-        :xFormatter="xAxisFormatter"
-        yLabel="Count"
-        :x-label="xAxisLabel"
-        :curve-type="CurveType.Linear"
-        hide-legend
-    />
+    <div class="my-8">
+        <h2 class="mb-4 text-xl text-center">{{ Mapper.retriever(data.retrieverIdentifier) }} {{ data.dataType}}</h2>
+        <LineChart
+            :data="dataToDisplay"
+            :categories="categories"
+            :height="300"
+            :xFormatter="xAxisFormatter"
+            yLabel="Count"
+            :x-label="xAxisLabel"
+            :curve-type="CurveType.Linear"
+            hide-legend
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

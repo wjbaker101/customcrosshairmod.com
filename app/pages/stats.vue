@@ -23,10 +23,12 @@
             </div>
         </div>
     </div>
-    <div v-for="x in data.filter(x => x.projectIdentifier === selectedProject)" :key="`${x.projectIdentifier}+${x.retrieverIdentifier}+${x.dataType}`" class="my-8">
-        <h2 class="mb-4 text-xl text-center">{{ Mapper.retriever(x.retrieverIdentifier) }} {{ x.dataType}}</h2>
-        <ProjectLineGraph :data="x" :period="selectedPeriod" />
-    </div>
+    <ProjectLineGraph
+        v-for="x in data.filter(x => x.projectIdentifier === selectedProject)"
+        :key="`${x.projectIdentifier}+${x.retrieverIdentifier}+${x.dataType}`"
+        :data="x"
+        :period="selectedPeriod"
+    />
 </template>
 
 <script setup lang="ts">
