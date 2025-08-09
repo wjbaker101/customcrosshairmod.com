@@ -22,7 +22,7 @@
             hide-legend
         >
             <template #tooltip="{ values }">
-                <div class="bg-(--background-dark)/80 p-2 rounded-md shadow-xl">
+                <div class="!bg-(--background-dark)/80 !p-2 rounded-md shadow-xl">
                     <div class="font-bold text-lg text-center">{{ values?.value }}</div>
                     <div class="text-sm">{{ values?.retrievedAt.format('DD/MM/YYYY') }}</div>
                 </div>
@@ -77,12 +77,12 @@ const latestDiffFormatted = computed(() => {
 :root {
     --vis-tooltip-padding: 0;
 
-    --vis-tooltip-background-color: transpanret;
-    --vis-tooltip-text-color: inherit;
-    --vis-tooltip-border-color: transparent;
+    --vis-tooltip-background-color: transparent !important;
+    --vis-tooltip-text-color: inherit !important;
+    --vis-tooltip-border-color: transparent !important;
 
-    --vis-dark-tooltip-background-color: transpanret;
-    --vis-dark-tooltip-text-color: inherit;
-    --vis-dark-tooltip-border-color: transparent;
+    --vis-dark-tooltip-background-color: transparent !important;
+    --vis-dark-tooltip-text-color: inherit !important;
+    --vis-dark-tooltip-border-color: transparent !important;
 }
 </style>
