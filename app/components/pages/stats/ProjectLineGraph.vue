@@ -20,7 +20,7 @@ const { data, period } = defineProps<{
 }>();
 
 const dataToDisplay = computed(() => {
-    if (period === 'Recent') {
+    if (period === 'recent') {
         return data.values.filter(x => x.retrievedAt.isAfter(dayjs().subtract(1, 'months')));
     }
 

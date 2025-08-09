@@ -12,14 +12,14 @@
         </div>
         <div class="self-stretch grid border-slate-600 border-l text-left">
             <div
-                v-for="period in periods"
+                v-for="(title, period) in periods"
                 @click="selectPeriod(period)"
                 :class="{
                     'bg-slate-600/50': period === selectedPeriod,
                 }"
                 class="px-4 cursor-pointer"
             >
-                {{ period }}
+                {{ title }}
             </div>
         </div>
     </div>
@@ -34,10 +34,8 @@ import ProjectLineGraph from '~/components/pages/stats/ProjectLineGraph.vue';
 
 const data = await getData();
 
-const periods = ['Recent', 'All Time'];
-
 const selectedProject = ref('custom_crosshair_mod');
-const selectedPeriod = ref('Recent');
+const selectedPeriod = ref('recent');
 
 function selectProject(projectIdentifier: string) {
     selectedProject.value = projectIdentifier;

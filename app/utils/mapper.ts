@@ -9,6 +9,11 @@ const retrievers: Record<string, string> = {
     'pastebin': 'Pastebin',
 };
 
+export const periods: Record<string, string> = {
+    'all_time': 'All Time',
+    'recent': 'Recent',
+};
+
 export class Mapper {
     
     public static project(projectIdentifier: string): string {
@@ -25,5 +30,13 @@ export class Mapper {
         }
 
         return retrieverIdentifier;
+    }
+
+    public static period(periodIdentifier: string): string {
+        if (periodIdentifier in periods) {
+            return periods[periodIdentifier]!;
+        }
+
+        return periodIdentifier;
     }
 }
