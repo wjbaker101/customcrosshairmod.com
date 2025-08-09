@@ -20,7 +20,14 @@
             :x-label="xAxisLabel"
             :curve-type="CurveType.Linear"
             hide-legend
-        />
+        >
+            <template #tooltip="{ values }">
+                <div class="bg-(--background-dark)/80 p-2 rounded-md shadow-xl">
+                    <div class="font-bold text-lg text-center">{{ values?.value }}</div>
+                    <div class="text-sm">{{ values?.retrievedAt.format('DD/MM/YYYY') }}</div>
+                </div>
+            </template>
+        </LineChart>
     </div>
 </template>
 
@@ -65,3 +72,12 @@ const latestDiffFormatted = computed(() => {
     return `+${latest}`;
 });
 </script>
+
+<style lang="css">
+:root {
+    --vis-tooltip-background-color: transpanret;
+    --vis-tooltip-text-color: inherit;
+    --vis-tooltip-border-color: transparent;
+    --vis-tooltip-padding: 0;
+}
+</style>
