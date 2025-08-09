@@ -42,7 +42,7 @@ function mapFile(file: string, contents: string): IProjectData {
         projectIdentifier,
         retrieverIdentifier,
         dataType,
-        values: transform(contents.split('\n').map(mapLine)),
+        values: transform(contents.split('\n').filter(x => x.length > 0).map(mapLine)),
     };
 }
 
