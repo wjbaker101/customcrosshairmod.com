@@ -19,8 +19,8 @@
         "vue3-simple-icons": "^15.6.0"
     },
     "devDependencies": {
-        "@tailwindcss/vite": "^4.1.11",
+        "@tailwindcss/vite": "^4.1.12",
         "sass": "^1.90.0",
-        "tailwindcss": "^4.1.11"
+        "tailwindcss": "^4.1.12"
     }
 }
