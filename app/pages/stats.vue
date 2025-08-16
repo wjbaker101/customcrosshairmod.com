@@ -1,5 +1,6 @@
 <template>
-    <h1 class="py-8 text-4xl text-center">Stats</h1>
+    <h1 class="mt-8 text-4xl text-center">Stats</h1>
+    <p class="my-4 text-center">Overall Downloads: {{ formatNumber(overallDownloads) }}</p>
     <div class="flex items-center border border-slate-600 rounded-md text-center cursor-pointer select-none">
         <div
             v-for="(title, identifier) in projects" @click="selectProject(identifier)"
@@ -46,6 +47,21 @@ onMounted(async () => {
 
 const selectedProject = ref<ProjectIdentifier>('custom_crosshair_mod');
 const selectedPeriod = ref<PeriodIdentifier>('recent');
+
+const overallDownloads = computed(() => {
+    const calculated = data.value
+        .filter(x =>
+            x.projectIdentifier === selectedProject.value &&
+            x.dataType === 'downloads')
+        .reduce((total, current) => total += current.latestValue, 0);
+
+    if (selectedProject.value === 'custom_crosshair_mod') {
+        const mediaFireDownloads = 158843;
+        return calculated + mediaFireDownloads;
+    }
+
+    return calculated;
+});
 
 function selectProject(projectIdentifier: ProjectIdentifier) {
     selectedProject.value = projectIdentifier;

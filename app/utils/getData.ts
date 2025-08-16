@@ -16,6 +16,7 @@ export interface IProjectData {
     readonly retrieverIdentifier: string;
     readonly dataType: string;
     readonly values: Array<IValue>;
+    readonly latestValue: number;
 }
 
 export interface IValue {
@@ -38,11 +39,14 @@ export async function getData() {
 function mapFile(file: string, contents: string): IProjectData {
     const [ projectIdentifier, retrieverIdentifier, dataType ] = file.replace('.txt', '').split('+') as [string, string, string];
 
+    const values = contents.split('\n').filter(x => x.length > 0).map(mapLine);
+
     return {
         projectIdentifier,
         retrieverIdentifier,
         dataType,
-        values: transform(contents.split('\n').filter(x => x.length > 0).map(mapLine)),
+        values: transform(values),
+        latestValue: values.at(-1)?.value ?? 0,
     };
 }
 
