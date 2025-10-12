@@ -16,6 +16,14 @@ export default defineNuxtConfig({
 
     css: ['~/styling/main.css'],
 
+    pages: {
+        pattern: [
+            '**/*.vue',
+            '!**/_components/**',
+            '!**/_logic/**',
+        ],
+    },
+
     vite: {
         plugins: [
             tailwindcss(),

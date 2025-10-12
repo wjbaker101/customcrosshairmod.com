@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import ProjectLineGraph from '~/components/pages/stats/ProjectLineGraph.vue';
+import ProjectLineGraph from '~/pages/stats/_components/ProjectLineGraph.vue';
 
 const data = ref<Array<IProjectData>>([]);
 

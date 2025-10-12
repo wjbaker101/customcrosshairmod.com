@@ -33,6 +33,8 @@
 import { ArrowDownIcon } from 'lucide-vue-next';
 import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 
+import CrosshairComponent from '~/pages/index/_components/CrosshairComponent.vue';
+
 const topVersions = [
     '1.21.10',
     '1.20.1',
