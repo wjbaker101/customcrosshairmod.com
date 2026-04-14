@@ -36,6 +36,7 @@ import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 import CrosshairComponent from '~/pages/index/_components/CrosshairComponent.vue';
 
 const topVersions = [
+    '26.1.2',
     '1.21.10',
     '1.20.1',
     '1.18.2',
