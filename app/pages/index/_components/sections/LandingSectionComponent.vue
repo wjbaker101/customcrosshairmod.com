@@ -6,13 +6,13 @@
             <p class="mb-2">DOWNLOAD:</p>
             <div class="space-x-2 mb-4">
                 <a href="https://www.curseforge.com/minecraft/mc-mods/custom-crosshair-mod" target="_blank">
-                    <ButtonComponent class="text-black !bg-(--curseforge) hover:!bg-(00curseforge-light) focus:!outline-(--curseforge)">
+                    <ButtonComponent class="text-black bg-(--curseforge)! hover:!bg-(00curseforge-light) focus:outline-(--curseforge)!">
                         <CurseForgeIcon class="inline-block mr-2 align-middle" />
                         <span class="align-middle">CurseForge</span>
                     </ButtonComponent>
                 </a>
                 <a href="https://modrinth.com/mod/custom-crosshair-mod" target="_blank">
-                    <ButtonComponent class="!bg-(--modrinth) hover:!bg-(--modrinth-dark) focus:!outline-(--modrinth)">
+                    <ButtonComponent class="bg-(--modrinth)! hover:bg-(--modrinth-dark)! focus:outline-(--modrinth)!">
                         <ModrinthIcon class="inline-block mr-2 align-middle" />
                         <span class="align-middle">Modrinth</span>
                     </ButtonComponent>
