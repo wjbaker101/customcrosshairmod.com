@@ -2,7 +2,7 @@
     <div class="text-center supported-by-section">
         <h1 class="my-12 text-4xl">Supported By</h1>
         <p class="mb-4">The Custom Crosshair mod is a free to use and open-source mod, and is supported by:</p>
-        <a href="https://tuta.com" target="_blank" class="mb-4 inline-block rounded-md bg-slate-100 p-4">
+        <a href="https://tuta.com" target="_blank" class="inline-block bg-slate-100 mb-4 p-4 rounded-md">
             <img width="200" src="/static/images/tuta.svg" alt="Tuta">
         </a>
         <a href="https://www.bisecthosting.com/CustomCrosshairMod" target="_blank">
@@ -10,6 +10,7 @@
         </a>
         <h2 class="my-8 text-2xl">Patrons:</h2>
         <ul class="space-y-1">
+            <li><strong>Bora G</strong> - 07/2026</li>
             <li><strong>01lyo</strong> - 09/2024</li>
             <li><strong>TheDarkLightAura</strong> - 06/2024</li>
             <li><strong>Daniel C</strong> - 05/2024</li>
