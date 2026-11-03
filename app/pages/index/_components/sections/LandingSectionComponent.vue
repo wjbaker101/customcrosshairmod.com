@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowDownIcon } from 'lucide-vue-next';
+import { ArrowDownIcon } from '@lucide/vue';
 import { CurseForgeIcon, ModrinthIcon } from 'vue3-simple-icons';
 
 import CrosshairComponent from '~/pages/index/_components/CrosshairComponent.vue';

@@ -10,10 +10,10 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
+        "@lucide/vue": "^1.67.0",
         "@nuxt/fonts": "^1.2.0",
         "@vercel/analytics": "^2.0.1",
         "dayjs": "^1.11.23",
-        "lucide-vue-next": "^1.0.0",
         "nuxt": "^4.6.4",
         "nuxt-charts": "^3.2.0",
         "vue3-simple-icons": "^16.10.0"
