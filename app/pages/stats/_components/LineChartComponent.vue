@@ -7,7 +7,15 @@
             <svg :viewBox="`0 0 ${width} ${height}`" preserveAspectRatio="none" class="w-full h-full overflow-visible">
                 <!-- Horizontal grid lines and Y-axis labels -->
                 <g v-for="tick in yTicks" :key="tick.value">
-                    <line :x1="padding.left" :y1="tick.y" :x2="width - padding.right" :y2="tick.y" stroke-width="1" stroke-dasharray="4 4" class="stroke-slate-700" />
+                    <line
+                        :x1="padding.left - 6"
+                        :y1="tick.y"
+                        :x2="padding.left"
+                        :y2="tick.y"
+                        stroke-width="1"
+                        class="stroke-slate-500"
+                    />
+                    <line v-if="tick.y !== height - padding.bottom" :x1="padding.left" :y1="tick.y" :x2="width - padding.right" :y2="tick.y" stroke-width="1" stroke-dasharray="4 4" class="stroke-slate-700" />
                     <text :x="padding.left - 10" :y="tick.y" text-anchor="end" dominant-baseline="middle" font-size="12" class="fill-current">
                         {{ tick.label }}
                     </text>
@@ -20,7 +28,7 @@
                     :x2="padding.left"
                     :y2="height - padding.bottom"
                     stroke-width="1"
-                    class="stroke-slate-400"
+                    class="stroke-slate-500"
                 />
 
                 <!-- X-axis -->
@@ -30,7 +38,7 @@
                     :x2="width - padding.right"
                     :y2="height - padding.bottom"
                     stroke-width="1"
-                    class="stroke-slate-400"
+                    class="stroke-slate-500"
                 />
 
                 <!-- X-axis notches and labels -->
@@ -41,7 +49,7 @@
                         :x2="tick.x"
                         :y2="height - padding.bottom + 6"
                         stroke-width="1"
-                        class="stroke-slate-400"
+                        class="stroke-slate-500"
                     />
 
                     <text
