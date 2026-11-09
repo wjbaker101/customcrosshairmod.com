@@ -15,7 +15,6 @@
         "@vercel/analytics": "^2.0.1",
         "dayjs": "^1.11.23",
         "nuxt": "^4.6.4",
-        "nuxt-charts": "^3.2.0",
         "vue3-simple-icons": "^16.10.0"
     },
     "devDependencies": {

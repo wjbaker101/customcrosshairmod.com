@@ -11,28 +11,14 @@
                 }"
             >{{ latestDiffFormatted }}</span>)
         </div>
-        <LineChart
-            :data="dataToDisplay"
-            :categories="categories"
-            :height="300"
-            :xFormatter="xAxisFormatter"
-            yLabel="Count"
-            :x-label="xAxisLabel"
-            :curve-type="CurveType.Linear"
-            hide-legend
-        >
-            <template #tooltip="{ values }">
-                <div class="!bg-(--background-dark)/80 !p-2 rounded-md shadow-xl">
-                    <div class="font-bold text-lg text-center">{{ values?.value }}</div>
-                    <div class="text-sm">{{ values?.retrievedAt.format('DD/MM/YYYY') }}</div>
-                </div>
-            </template>
-        </LineChart>
+        <LineChartComponent :data="dataToDisplay" />
     </div>
 </template>
 
 <script setup lang="ts">
 import dayjs from 'dayjs';
+
+import LineChartComponent from '~/pages/stats/_components/LineChartComponent.vue';
 
 const { data, period } = defineProps<{
     data: IProjectData;
@@ -46,17 +32,6 @@ const dataToDisplay = computed(() => {
 
     return data.values.filter(x => x.retrievedAt);
 });
-
-const categories = {
-    value: {
-        name: `${Mapper.project(data.projectIdentifier)} ${Mapper.retriever(data.retrieverIdentifier)} ${data.dataType}`,
-        color: '#ffb400',
-    },
-};
-
-const xAxisFormatter = (i: number) => dataToDisplay.value[i]!.retrievedAt.format('DD/MM/YYYY');
-
-const xAxisLabel = computed(() => `Date (${dataToDisplay.value[0]?.retrievedAt.fromNow(true)} span)`);
 
 const latestDiff = computed(() => {
     return data.values.at(-1)!.value - data.values.at(-2)!.value;
@@ -72,17 +47,3 @@ const latestDiffFormatted = computed(() => {
     return `+${latest}`;
 });
 </script>
-
-<style lang="css">
-:root {
-    --vis-tooltip-padding: 0;
-
-    --vis-tooltip-background-color: transparent !important;
-    --vis-tooltip-text-color: inherit !important;
-    --vis-tooltip-border-color: transparent !important;
-
-    --vis-dark-tooltip-background-color: transparent !important;
-    --vis-dark-tooltip-text-color: inherit !important;
-    --vis-dark-tooltip-border-color: transparent !important;
-}
-</style>
