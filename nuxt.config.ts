@@ -5,13 +5,12 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2026-11-01',
 
+    devtools: { enabled: false },
+    telemetry: { enabled: false },
+
     modules: [
         '@nuxt/fonts',
     ],
-
-    devtools: {
-        enabled: false,
-    },
 
     css: ['~/styling/main.css'],
 
