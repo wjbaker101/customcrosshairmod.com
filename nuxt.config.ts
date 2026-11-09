@@ -7,7 +7,6 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxt/fonts',
-        'nuxt-charts',
     ],
 
     devtools: {
