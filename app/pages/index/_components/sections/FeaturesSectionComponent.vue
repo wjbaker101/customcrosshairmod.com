@@ -4,7 +4,7 @@
         <ol>
             <li>Change size, colour, shape!</li>
             <li>
-                <span class="rainbow-text">Rainbow crosshair!</span>
+                <span class="_rainbow-text">Rainbow crosshair!</span>
             </li>
             <li>Dynamic (try using a bow or sword)!</li>
             <li>Adaptive colour!</li>
@@ -27,13 +27,10 @@
 <script setup lang="ts">
 </script>
 
-<style lang="scss">
-.features-section {
-
-    .rainbow-text {
-        background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+<style scoped lang="css">
+._rainbow-text {
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 </style>
