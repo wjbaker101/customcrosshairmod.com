@@ -101,6 +101,8 @@
 <script setup lang="ts">
 import dayjs from 'dayjs';
 
+import type { IValue } from '~/pages/stats/_logic/getData';
+
 const props = defineProps<{
     data: Array<IValue>;
 }>();

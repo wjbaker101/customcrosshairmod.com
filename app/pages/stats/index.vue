@@ -35,6 +35,10 @@
 <script setup lang="ts">
 import ProjectLineGraph from '~/pages/stats/_components/ProjectLineGraph.vue';
 
+import { formatNumber } from '~/pages/stats/_logic/formatNumber';
+import { getData, type IProjectData } from '~/pages/stats/_logic/getData';
+import { periods, projects, type PeriodIdentifier, type ProjectIdentifier } from '~/pages/stats/_logic/mapper';
+
 const data = ref<Array<IProjectData>>([]);
 
 onMounted(async () => {

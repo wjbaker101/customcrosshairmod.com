@@ -20,6 +20,10 @@ import dayjs from 'dayjs';
 
 import LineChartComponent from '~/pages/stats/_components/LineChartComponent.vue';
 
+import { formatNumber } from '~/pages/stats/_logic/formatNumber';
+import type { IProjectData } from '~/pages/stats/_logic/getData';
+import { Mapper, type PeriodIdentifier } from '~/pages/stats/_logic/mapper';
+
 const { data, period } = defineProps<{
     data: IProjectData;
     period: PeriodIdentifier;
