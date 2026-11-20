@@ -80,36 +80,36 @@ function removeOutliers(value: IValue, projectIdentifier: string, retrieverIdent
         'custom_crosshair_mod': {
             'curseforge': {
                 'downloads': new Set([
-                    dayjs().year(2022).month(4).date(6).startOf('day').unix(),
-                    dayjs().year(2022).month(4).date(7).startOf('day').unix(),
-                    dayjs().year(2022).month(4).date(8).startOf('day').unix(),
-                    dayjs().year(2022).month(4).date(9).startOf('day').unix(),
-                    dayjs().year(2022).month(4).date(10).startOf('day').unix(),
-                    dayjs().year(2022).month(4).date(11).startOf('day').unix(),
+                    createOutlier(2022, 5, 6),
+                    createOutlier(2022, 5, 7),
+                    createOutlier(2022, 5, 8),
+                    createOutlier(2022, 5, 9),
+                    createOutlier(2022, 5, 10),
+                    createOutlier(2022, 5, 11),
 
-                    dayjs().year(2025).month(5).date(14).startOf('day').unix(),
-                    dayjs().year(2025).month(5).date(15).startOf('day').unix(),
-                    dayjs().year(2025).month(5).date(17).startOf('day').unix(),
-                    dayjs().year(2025).month(5).date(18).startOf('day').unix(),
+                    createOutlier(2025, 6, 14),
+                    createOutlier(2025, 6, 15),
+                    createOutlier(2025, 6, 17),
+                    createOutlier(2025, 6, 18),
 
-                    dayjs().year(2026).month(5).date(6).startOf('day').unix(),
+                    createOutlier(2026, 6, 6),
                 ]),
             },
             'modrinth': {
                 'downloads': new Set([
-                    dayjs().year(2026).month(10).date(5).startOf('day').unix(),
+                    createOutlier(2026, 11, 5),
                 ]),
             },
             'pastebin': {
                 'views': new Set([
-                    dayjs().year(2025).month(11).date(31).startOf('day').unix(),
+                    createOutlier(2025, 12, 31),
 
-                    dayjs().year(2024).month(5).date(15).startOf('day').unix(),
+                    createOutlier(2024, 6, 15),
 
-                    dayjs().year(2026).month(6).date(29).startOf('day').unix(),
-                    dayjs().year(2026).month(6).date(30).startOf('day').unix(),
+                    createOutlier(2026, 7, 29),
+                    createOutlier(2026, 7, 30),
 
-                    dayjs().year(2026).month(9).date(14).startOf('day').unix(),
+                    createOutlier(2026, 10, 14),
                 ]),
             },
         },
@@ -125,4 +125,8 @@ function removeOutliers(value: IValue, projectIdentifier: string, retrieverIdent
     }
 
     return true;
+}
+
+function createOutlier(year: number, month: number, day: number) {
+    return dayjs(new Date(year, month - 1, day)).startOf('day').unix();
 }
