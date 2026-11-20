@@ -133,14 +133,15 @@ const bounds = computed(() => {
             maxX: 1,
             minY: 0,
             maxY: 1,
+            step: 1,
         };
     }
 
     const minX = sortedData.value[0]!.retrievedAt.valueOf();
     const maxX = sortedData.value.at(-1)!.retrievedAt.valueOf();
 
-    const dataMin = Math.min(0, ...values);
-    const dataMax = Math.max(0, ...values);
+    const dataMin = Math.min(...values);
+    const dataMax = Math.max(...values);
 
     const range = dataMax - dataMin || Math.abs(dataMax) * 0.1 || 1;
     const roughStep = range / 4;
@@ -149,9 +150,9 @@ const bounds = computed(() => {
 
     const niceStep =
         normalized <= 1 ? 1 :
-            normalized <= 2 ? 2 :
-                normalized <= 2.5 ? 2.5 :
-                    normalized <= 5 ? 5 : 10;
+        normalized <= 2 ? 2 :
+        normalized <= 2.5 ? 2.5 :
+        normalized <= 5 ? 5 : 10;
 
     const step = niceStep * magnitude;
 
@@ -160,6 +161,7 @@ const bounds = computed(() => {
         maxX,
         minY: Math.floor(dataMin / step) * step,
         maxY: Math.ceil(dataMax / step) * step,
+        step,
     };
 });
 
@@ -188,10 +190,11 @@ const path = computed(() => points.value
 );
 
 const yTicks = computed(() => {
-    const { minY, maxY } = bounds.value;
-    const step = (maxY - minY) / 4;
+    const { minY, maxY, step } = bounds.value;
 
-    return Array.from({ length: 5 }, (_, index) => {
+    const count = Math.round((maxY - minY) / step);
+
+    return Array.from({ length: count + 1 }, (_, index) => {
         const value = Number((minY + step * index).toPrecision(12));
 
         return {
