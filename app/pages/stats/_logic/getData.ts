@@ -102,14 +102,23 @@ function removeOutliers(value: IValue, projectIdentifier: string, retrieverIdent
             },
             'pastebin': {
                 'views': new Set([
-                    createOutlier(2025, 12, 31),
+                    createOutlier(2022, 8, 12),
 
+                    createOutlier(2024, 1, 31),
+                    createOutlier(2024, 2, 1),
                     createOutlier(2024, 6, 15),
+
+                    createOutlier(2025, 12, 31),
 
                     createOutlier(2026, 7, 29),
                     createOutlier(2026, 7, 30),
 
+                    createOutlier(2026, 10, 12),
+                    createOutlier(2026, 10, 13),
                     createOutlier(2026, 10, 14),
+
+                    createOutlier(2026, 11, 9),
+                    createOutlier(2026, 11, 10),
                 ]),
             },
         },
